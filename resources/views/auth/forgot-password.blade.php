@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-header-canvas/>
+    <x-header-canvas class="z-40"/>
 
     <x-authentication-card>
         <x-slot name="logo">
