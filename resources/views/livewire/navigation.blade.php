@@ -1,7 +1,8 @@
-<header class="bg-primary sticky top-0" style="z-index: 1000"">
+<header class="bg-primary sticky top-0" style="z-index: 1000" x-data="dropdown()">
     <div class="container flex items-center h-16 justify-between md:justify-start">
-        <a x-on:click="show()" :class="{ '!text-orange-500 !bg-opacity-100': open }"
-            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-primaryHover bg bg-opacity-25 text-secondary hover:text-white cursor-pointer font-semibold h-full transition ease-in-out duration-150">
+        <a
+        x-on:click="show()" :class="{ '!text-secondary !bg-whiteCanvas': open }"
+        class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-primaryHover bg bg-opacity-25 text-secondary hover:text-white cursor-pointer font-semibold h-full transition ease-in-out duration-150">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16" />
@@ -73,4 +74,59 @@
         @livewire('dropdown-cart')
 
     </div>
+
+    <nav id="navigation-menu" 
+    x-cloak x-show="open"
+    class="bg-grayP bg-opacity-25 w-full absolute">
+        <div class="container h-full">
+            <div
+            x-on:click.away="close()"
+            class="grid grid-cols-4 h-full relative">
+                <ul class="bg-whiteCanvas">
+                    <li class="text-grayP hover:bg-primary hover:text-secondary">
+                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                            <span class="flex justify-center w-9"><i class="fa-solid fa-star"></i></span> Destacados</a>
+                    </li>
+                    <li class="text-grayP hover:bg-primary hover:text-secondary">
+                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                            <span class="flex justify-center w-9"><i class="fa-solid fa-scissors"></i></span> Turnos de peluqueria canina</a>
+                    </li>
+                    <li class="text-grayP hover:bg-primary hover:text-secondary">
+                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                            <span class="flex justify-center w-9"><i class="fa-solid fa-people-group"></i></span> Sobre nosotros</a>
+                    </li>
+                    <li class="text-grayP hover:bg-primary hover:text-secondary">
+                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                            <span class="flex justify-center w-9"><i class="fa-solid fa-paw-simple"></i><i class="fa-sharp fa-solid fa-conveyor-belt-empty"></i><i class="fa-solid fa-circle-question"></i></span> Ayuda</a>
+                    </li>
+
+                </ul>
+
+                <div class="col-span-1 bg-grayCanvas py-4 px-4">
+                    <p class="text-secondaryHoover text-lg px-4 font-bold text-center">Productos</p>
+                    <ul>
+                        @foreach ($categories as $category)
+                        <li class="navigation-link text-grayP hover:text-secondary">
+                            <a href="" class="py-2 px-4 flex items-center">
+                                <span class="flex justify-center w-9">{!!$category->icon!!}</span>
+                                {{ $category->name }}
+                            </a>
+
+                            <div class="navigation-submenu bg-grayCanvas absolute w-2/4 top-0 right-0 h-full hidden py-4 px-4">
+                                <img class="h-64 w-full object-cover object-center" src="{{Storage::url($category->image)}}" alt="">
+                            </div>
+
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <div class="col-span-2 bg-grayCanvas py-4 px-4">
+                    <img class="h-64 w-full object-cover object-center" src="{{Storage::url($categories->first()->image)}}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </nav>
 </header>
+

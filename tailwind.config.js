@@ -24,6 +24,7 @@ module.exports = {
             greenCanvas: '#2DFA53',
             redError: '#FF1818',
             whiteCanvas: '#F7F7F7',
+            grayCanvas: '#EEEEEE',
             'white': '#ffffff',
             'purple': '#3f3cbb',
             'midnight': '#121063',
