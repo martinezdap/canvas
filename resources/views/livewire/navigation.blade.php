@@ -74,7 +74,6 @@
         @livewire('dropdown-cart')
 
     </div>
-
     <nav id="navigation-menu" 
     x-cloak x-show="open"
     class="bg-grayP bg-opacity-25 w-full absolute">
