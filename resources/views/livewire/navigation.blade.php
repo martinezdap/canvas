@@ -109,7 +109,7 @@
                     <ul>
                         @foreach ($categories as $category)
                         <li class="navigation-link text-grayP hover:text-secondary">
-                            <a href="" class="py-2 px-4 flex items-center">
+                            <a href="{{ route('categories.show', $category) }}" class="py-2 px-4 flex items-center">
                                 <span class="flex justify-center w-9">{!!$category->icon!!}</span>
                                 {{ $category->name }}
                             </a>
