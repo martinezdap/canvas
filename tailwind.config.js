@@ -21,7 +21,7 @@ module.exports = {
             primaryHover: '#FFE6A1',
             secondaryHoover: '#C41E51',
             grayP: '#7C7C7C',
-            greenCanvas: '#2DFA53',
+            greenCanvas: '#9BCB3C',
             redError: '#FF1818',
             whiteCanvas: '#F7F7F7',
             grayCanvas: '#EEEEEE',

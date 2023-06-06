@@ -22,6 +22,8 @@
         </section>
     </div>
 
+
+
     @push('script')
         <script>
             Livewire.on('glider', function() {

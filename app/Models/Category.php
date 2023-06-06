@@ -12,12 +12,20 @@ class Category extends Model
     protected $fillable = ['name', 'slug', 'image', 'icon'];
 
     //De uno a muchos
-    public function products(){
+    public function products()
+    {
         return $this->hasMany(Product::class);
     }
 
     //De muchos a muchos
-    public function brands(){
+    public function brands()
+    {
         return $this->belongsToMany(Brand::class);
+    }
+
+    //URL Amigables
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function __invoke()
     {
-        $products = Product::take(15)->where('status', 2)->get();
+        $products = Product::take(200)->where('status', 2)->get();
 
         return view('welcome', compact('products'));
     }

@@ -6,7 +6,7 @@
                 @foreach ($productsList as $product)
                     <li class="bg-white rounded-sm {{ $loop->last ? '' : 'mr-4' }}">
                         <article>
-                            <a href="/">
+                            <a href="{{ route('products.show', $product->id) }}">
                                 <div>
                                     <figure class="py-4 px-4">
                                         <img class="border border-grayCanvas h-48 w-56 object-cover object-center"
