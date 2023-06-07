@@ -136,7 +136,6 @@
                 @livewire('search')
             </div>
 
-
             <ul class="bg-whiteCanvas">
                 <li class="text-grayP hover:bg-primary hover:text-secondary">
                     <a href="" class="py-2 px-4 text-sm flex items-center">
