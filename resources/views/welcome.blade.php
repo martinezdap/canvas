@@ -5,7 +5,7 @@
     </div>
 
     <div>
-        <section class="flex flex-col items-center">
+        <section class="flex flex-col items-center mb-8">
             <h1 class="text-lg sticky uppercase text-whiteCanvas bg-secondary py-2 mb-2 text-center w-full">
                 Productos destacados
             </h1>
@@ -21,8 +21,8 @@
             </div>
         </section>
     </div>
-
-
+    
+    <x-footercanvas/>
 
     @push('script')
         <script>
