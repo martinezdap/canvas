@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-header-canvas class="z-40"/>
-
+    <div class="mx-auto maxdiv-w-lg">
     <x-authentication-card>
         <x-slot name="logo">
             <div class="flex flex-col justify-center items-center">
@@ -38,4 +38,5 @@
             </div>
         </form>
     </x-authentication-card>
+    </div>
 </x-guest-layout>

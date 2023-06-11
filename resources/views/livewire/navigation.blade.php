@@ -15,6 +15,7 @@
                 <img class="w-20 px-4" src="{{ asset('img/logo.png') }}">
             </a>
         </div>
+        
         <div class="flex-1 hidden md:block">
         @livewire('search')
         </div>

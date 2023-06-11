@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-header-canvas />
 
+    <div class="mx-auto maxdiv-w-lg">
     <x-authentication-card class="w-80">
 
         <div>
@@ -112,5 +113,5 @@
             </form>
         </div>
     </x-authentication-card>
-
+</div>
 </x-guest-layout>
