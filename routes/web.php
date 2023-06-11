@@ -11,6 +11,10 @@ Route::get('categories/{category}', [CategoryController::class, 'show'])->name('
 
 Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
+Route::get('sobrenosotros', function(){
+    return view('sobrenosotros');
+})->name('sobrenosotros');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
