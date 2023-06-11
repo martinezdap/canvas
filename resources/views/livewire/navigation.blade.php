@@ -123,7 +123,7 @@
                 <div class="col-span-2 bg-grayCanvas py-4 px-4">
                     <img class="h-64 w-full object-cover object-center" src="{{Storage::url($categories->first()->image)}}" alt="">
                 </div>
-
+                
             </div>
         </div>
     </nav>

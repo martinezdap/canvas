@@ -27,6 +27,7 @@ module.exports = {
             grayCanvas: '#EEEEEE',
             orangeCanvas: '#FF8400',
             blackCanvas: '#393E46',
+            grayBorder: '#BDCDD6',
             'white': '#ffffff',
             'purple': '#3f3cbb',
             'midnight': '#121063',

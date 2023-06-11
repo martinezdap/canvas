@@ -23,13 +23,6 @@
                                     </div>
                                 </div>
                             </a>
-
-                            {{-- <div>
-                            <div class="pb-4">
-                                <a class="bg-orangeCanvas py-2 px-4 rounded-lg text-whiteCanvas" href="">Comprar</a>
-                            </div>
-                        </div> --}}
-
                         </article>
                     </li>
                 @endforeach
