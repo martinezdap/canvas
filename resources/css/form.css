@@ -1,0 +1,3 @@
+.form-control{
+   @apply border-none h-12 text-lg focus:border-secondary focus:ring-grayBorder rounded-md shadow-sm;
+}
