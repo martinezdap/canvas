@@ -89,7 +89,7 @@
             });
         </script>
     @endpush
-    <div class="container  bg-secondary">
+    <div class="container ">
         <div class="flex items-center bg-secondary text-whiteCanvas">
             <img src="{{ asset('img/ducha mascota.jpg') }}" class="w-110 h-80 object-cover mr-10  pt-8 pb-8 ">
             <div class="text-right py-2 pr-60 ml-10 ">
@@ -114,4 +114,5 @@
             <img src="{{ asset('img/perroygato.jpg') }}" class="w-110 h-80 object-cover ml-10 pt-8 pb-8">
         </div>
     </div>
+    <x-footercanvas />
 </x-app-layout>
