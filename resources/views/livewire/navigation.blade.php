@@ -15,8 +15,9 @@
                 <img class="w-20 px-4" src="{{ asset('img/logo.png') }}">
             </a>
         </div>
-
+        <div class="flex-1 hidden md:block">
         @livewire('search')
+        </div>
 
         <div class="mx-6 relative hidden md:block">
             @auth
@@ -70,14 +71,16 @@
             @endauth
 
         </div>
-
-        @livewire('dropdown-cart')
+        <div class="hidden md:block">
+            @livewire('dropdown-cart')
+        </div>
 
     </div>
     <nav id="navigation-menu" 
     x-cloak x-show="open"
     class="bg-grayP bg-opacity-25 w-full absolute">
-        <div class="container h-full">
+        <!-- menu computadora -->
+        <div class="container h-full hidden md:block">
             <div
             x-on:click.away="close()"
             class="grid grid-cols-4 h-full relative">
@@ -123,8 +126,76 @@
                 <div class="col-span-2 bg-grayCanvas py-4 px-4">
                     <img class="h-64 w-full object-cover object-center" src="{{Storage::url($categories->first()->image)}}" alt="">
                 </div>
-                
+
             </div>
+        </div>
+        <!-- menu mobil -->
+        <div class="bg-white h-full overflow-y-auto">
+
+            <div class="container bg-whiteCanvas py-3 mb-2">
+                @livewire('search')
+            </div>
+
+            <ul class="bg-whiteCanvas">
+                <li class="text-grayP hover:bg-primary hover:text-secondary">
+                    <a href="" class="py-2 px-4 text-sm flex items-center">
+                        <span class="flex justify-center w-9"><i class="fa-solid fa-star"></i></span> Destacados</a>
+                </li>
+                <li class="text-grayP hover:bg-primary hover:text-secondary">
+                    <a href="" class="py-2 px-4 text-sm flex items-center">
+                        <span class="flex justify-center w-9"><i class="fa-solid fa-scissors"></i></span> Turnos de peluqueria canina</a>
+                </li>
+                <li class="text-grayP hover:bg-primary hover:text-secondary">
+                    <a href="" class="py-2 px-4 text-sm flex items-center">
+                        <span class="flex justify-center w-9"><i class="fa-solid fa-people-group"></i></span> Sobre nosotros</a>
+                </li>
+                <li class="text-grayP hover:bg-primary hover:text-secondary">
+                    <a href="" class="py-2 px-4 text-sm flex items-center">
+                        <span class="flex justify-center w-9"><i class="fa-solid fa-paw-simple"></i><i class="fa-sharp fa-solid fa-conveyor-belt-empty"></i><i class="fa-solid fa-circle-question"></i></span> Ayuda</a>
+                </li>
+
+            </ul>
+            <p class="text-grayP px-6 my-2">USUARIOS</p>
+            
+            @livewire('cart-mobil')
+            
+            @auth
+                <a href="{{ route('profile.show') }}" class="py-2 px-4 flex items-center text-grayP hover:text-secondary">
+                    <span class="flex justify-center w-9">
+                        <i class="fa-solid fa-address-card"></i>
+                    </span>
+                        Perfil
+                </a>
+
+                <a href="" 
+                onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit()"
+                class="py-2 px-4 flex items-center text-grayP hover:text-secondary">
+                    <span class="flex justify-center w-9">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                        Cerrar sesion
+                </a>
+                
+                <form id="logout-form" action="{{route('logout')}}" method="POST" class="hidden">
+                @csrf
+                </form>
+
+
+                @else
+                    <a href="{{ route('login') }}" class="py-2 px-4 flex items-center text-grayP hover:text-secondary">
+                        <span class="flex justify-center w-9">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </span>
+                            Iniciar sesion
+                    </a>
+                    <a href="{{ route('register') }}" class="py-2 px-4 flex items-center text-grayP hover:text-secondary">
+                        <span class="flex justify-center w-9">
+                            <i class="fa-solid fa-fingerprint"></i>
+                        </span>
+                            Registrate
+                    </a>
+            @endauth
         </div>
     </nav>
 </header>
