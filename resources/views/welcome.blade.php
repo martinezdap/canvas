@@ -5,7 +5,7 @@
     </div>
 
     <div>
-        <section class="flex flex-col items-center">
+        <section class="flex flex-col items-center mb-8">
             <h1 class="text-lg sticky uppercase text-whiteCanvas bg-secondary py-2 mb-2 text-center w-full">
                 Productos destacados
             </h1>
@@ -14,58 +14,28 @@
                 @livewire('slider-products', ['products' => $products])
             </div>
 
-            <div class="mb-6">
-                <a href="" class="bg-secondary py-2 px-4 rounded-lg text-white font-semibold uppercase">
+            <div>
+                <a href="{{ route('categories.show', $category) }}" class="bg-secondary py-2 px-4 rounded-lg text-white font-semibold uppercase">
                     Ver mas
                 </a>
             </div>
         </section>
     </div>
-
-
+    
 
     @push('script')
         <script>
             Livewire.on('glider', function() {
                 new Glider(document.querySelector('.glider-products'), {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
                     draggable: false,
                     rewind: true,
                     dots: '.glider-products' + '~ .dots',
                     arrows: {
                         prev: '.glider-products' + '~ .glider-prev',
                         next: '.glider-products' + '~ .glider-next'
-                    },
-                    responsive: [{
-                            breakpoint: 640,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 2,
-                            }
-                        },
-                        {
-                            breakpoint: 768,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3,
-                            }
-                        },
-                        {
-                            breakpoint: 1024,
-                            settings: {
-                                slidesToShow: 4,
-                                slidesToScroll: 4,
-                            }
-                        },
-                        {
-                            breakpoint: 1280,
-                            settings: {
-                                slidesToShow: 5,
-                                slidesToScroll: 5,
-                            }
-                        }
-                    ]
+                    }
                 });
             })
         </script>
@@ -115,4 +85,5 @@
         </div>
     </div>
     <x-footercanvas />
+
 </x-app-layout>
