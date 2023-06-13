@@ -15,7 +15,7 @@
             </div>
 
             <div class="mb-6">
-                <a href="" class="bg-secondary py-2 px-4 rounded-lg text-white font-semibold uppercase">
+                <a href="{{ route('categories.show', $category) }}" class="bg-secondary py-2 px-4 rounded-lg text-white font-semibold uppercase">
                     Ver mas
                 </a>
             </div>
