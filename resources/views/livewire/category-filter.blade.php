@@ -53,7 +53,7 @@
                                 <a href="{{ route('products.show', $product) }}">
                                     <div>
                                         <figure class="py-4 px-4">
-                                            <img class="border border-grayCanvas h-48 w-56 object-cover object-center"
+                                            <img class="border border-grayCanvas h-48 w-full object-cover object-center"
                                                 src="{{ Storage::url($product->images->first()->url) }}" alt="">
                                         </figure>
 
@@ -77,33 +77,19 @@
                             <article class="flex">
                                 <figure>
                                     <img class="h-48 w-56 objet-cover object-center"
-                                        src="{{Storage::url($product->images->first()->url) }}" alt="">
+                                        src="{{ Storage::url($product->images->first()->url) }}" alt="">
                                 </figure>
-                                <div class="flex-1 py-4 px-6 flex flex-col">
+                                <div class="flex-1 py-4 px-6 flex flex-col justify-between">
                                     <div class="flex justify-between">
                                         <div>
-                                            <h1 class="text-lg font-semibold text-blackCanvas">{{ $product->name }}
+                                            <h1 class="text-xl font-semibold text-blackCanvas">{{ $product->name }}
                                             </h1>
-                                            <p class="font-bold text-grayP">$ {{ $product->price }}</p>
+                                            <p class="font-semibold text-grayP text-xl">$ {{ $product->price }}</p>
                                         </div>
 
-                                        <div class="flex items-center">
-                                            <ul class="flex text-sm">
-                                                <li><i class="fas fa-star text-primary mr-1"></i></li>
-
-                                                <li><i class="fas fa-star text-primary mr-1"></i></li>
-
-                                                <li><i class="fas fa-star text-primary mr-1"></i></li>
-
-                                                <li><i class="fas fa-star text-primary mr-1"></i></li>
-
-                                                <li><i class="fas fa-star text-primary mr-1"></i></li>
-                                            </ul>
-                                            <span class="text-grayP text-sm">(24)</span>
-                                        </div>
                                     </div>
-                                    <div class="mt-auto mb-6">
-                                        <x-button >
+                                    <div class="">
+                                        <x-button>
                                             Mas informacion
                                         </x-button>
                                     </div>
