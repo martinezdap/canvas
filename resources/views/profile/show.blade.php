@@ -42,4 +42,5 @@
             @endif
         </div>
     </div>
+    <x-footercanvas/>
 </x-app-layout>
