@@ -10,7 +10,8 @@ class Navigation extends Component
     public function render()
     {
         $categories = Category::all();
+        $category = Category::first();
 
-        return view('livewire.navigation', compact('categories'));
+        return view('livewire.navigation', compact('categories'))->with('cat', $category);
     }
 }

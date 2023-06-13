@@ -138,6 +138,10 @@
 
             <ul class="bg-whiteCanvas">
                 <li class="text-grayP hover:bg-primary hover:text-secondary">
+                    <a href="{{ route('categories.show', $cat) }}" class="py-2 px-4 text-sm flex items-center">
+                        <span class="flex justify-center w-9"><i class="fa-solid fa-list-ul"></i></i></span> Categorias</a>
+                </li>
+                <li class="text-grayP hover:bg-primary hover:text-secondary">
                     <a href="" class="py-2 px-4 text-sm flex items-center">
                         <span class="flex justify-center w-9"><i class="fa-solid fa-star"></i></span> Destacados</a>
                 </li>

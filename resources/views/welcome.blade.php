@@ -89,32 +89,7 @@
             });
         </script>
     @endpush
-    <div class="container ">
-        <div class="flex items-center bg-secondary text-whiteCanvas">
-            <img src="{{ asset('img/ducha mascota.jpg') }}" class="w-110 h-80 object-cover mr-10  pt-8 pb-8 ">
-            <div class="text-right py-2 pr-60 ml-10 ">
-                <h1 class="text-4xl font-bold mb-3">Servicio de Peluquería canina</h1>
-                <p class="text-lg">Reserva un turno para tu mascota a traves de la pagina web! Elegi el horario que mas
-                    te
-                    guste</p>
-                <button class="mt-6 bg-primary text-secondary font-bold py-2 px-6 rounded">SOLICITAR TURNO</button>
-            </div>
-        </div>
-
-        <div class="flex items-center bg-grayCanvas ">
-            <div class="text-left py-2 pl-60 mr-10">
-                <h1 class="text-4xl font-bold mb-3">Sobre Nosotros</h1>
-                <p class="text-lg text-grayP">Canvas es una tienda especializada en productos y servicios para mascotas.
-                    La
-                    cual se centra en brindar una experiencia diferente de compra, ofreciendo productos y servicios de
-                    alta
-                    calidad que buscan cumplir con las necesidades de sus cachorros</p>
-                <button class="mt-6 bg-secondary text-white font-bold py-2 px-6 rounded">Sobre nosotros</button>
-            </div>
-            <img src="{{ asset('img/perroygato.jpg') }}" class="w-110 h-80 object-cover ml-10 pt-8 pb-8">
-        </div>
-    </div>
-    <x-footercanvas />
+    
 
     <div>
         <div class="bg-secondary py-8">
