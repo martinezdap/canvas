@@ -25,7 +25,7 @@ class Product extends Model
 
     //De muchos a muchos
     public function colors(){
-        return $this->belongsToMany(Color::class);
+        return $this->belongsToMany(Color::class)->withPivot('quantity');
     }
 
     //De uno a muchos

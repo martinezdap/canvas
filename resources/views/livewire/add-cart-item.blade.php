@@ -1,7 +1,7 @@
 <div x-data>
 
-    <p class="text-grayP">
-        <span class="font-semibold text-lg mb-4">Stock disponible:</span> {{ $quantity }}
+    <p class="text-grayP mb-4">
+        <span class="font-semibold text-lg">Stock disponible:</span> ({{ $quantity }})
     </p>
 
     <div class="flex items-center">
