@@ -15,6 +15,8 @@ class CategoryFilter extends Component
     public $category;
     public $marca;
 
+    public $view ="grid";
+
     public function limpiar()
     {
         $this->reset('marca');
