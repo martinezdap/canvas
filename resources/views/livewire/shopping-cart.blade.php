@@ -2,7 +2,9 @@
     <section class="bg-whiteCanvas rounded-lg shadow-lg p-6 text-grayP">
         <h1 class="text-lg font-semibold mb-6">CARRITO DE COMPRAS</h1>
 
-        <table class="table-auto w-full">
+        @if (Cart::count())
+
+            <table class="table-auto w-full">
             <thead>
                 <tr>
                     <th></th>
@@ -35,27 +37,68 @@
                             </div>
                         </td>
 
-                        <td>
+                        <td class = "text-center">
                             <span>ARS {{$item->price}}</span>
-                            <a class="ml-6 cursor-pointer hover:text-secondary">
+                            <a class="ml-6 cursor-pointer hover:text-secondary" wire:click="delete('{{$item->rowId}}')" 
+                                wire:loading.class="text-secondary opacity-25"
+                                wire:target="delete('{{$item->rowId}}')">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
 
                         <td>
-                            @if($item->options->size)
-                                @livewire('update-cart-item-size', ['rowId' => $item->rowId], key($item->rowId))
-                            @elseif($item->options->color)
-                                @livewire('update-cart-item-color', ['rowId' => $item->rowId], key($item->rowId))
-                            @else
-                                @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
-                            @endif
+                            <div class = "flex justify-center">
+                                @if($item->options->size)
+                                    @livewire('update-cart-item-size', ['rowId' => $item->rowId], key($item->rowId))
+                                @elseif($item->options->color)
+                                    @livewire('update-cart-item-color', ['rowId' => $item->rowId], key($item->rowId))
+                                @else
+                                    @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
+                                @endif
+                            </div>
                         </td>
 
-                        <td></td>
+                        <td class = "text-center">
+                            ARS {{$item->price*$item->qty}}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+            </table>
+
+            <a class = "text-sm cursor-pointer hover:underline mt-3 inline-block" wire:click="destroy">
+                <i class="fas fa-trash"></i>
+                Limpiar el carrito
+            </a>
+        @else
+            <div class = "flex flex-col items-center">
+                <x-cart/>
+                <p class="text-lg text-grayP mt-4">EL CARRITO DE COMPRAS ESTÁ VACÍO</p>
+                <a href="/">
+                    <x-button-enlace color="secondary" class="mt-4 px-16">
+                        VOLVER AL INICIO
+                    </x-button-enlace>
+                </a>
+            </div>
+        @endif
     </section>
+
+    @if(Cart::count())
+        <div class = "bg-whiteCanvas rounded-lg shadow-lg px-6 py-4 mt-4">
+            <div class = "flex justify-between items-center">
+                <div>
+                    <p class = "text-grayP">
+                        <span class="font-bold text-lg">Total:</span>
+                        ARS {{Cart::subTotal()}}
+                    </p>
+                </div>
+    
+                <div>
+                    <x-button-enlace color="secondary">
+                        CONTINUAR
+                    </x-button-enlace>
+                </div>
+            </div>
+        </div>
+    @endif
 </div>
