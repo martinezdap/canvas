@@ -1,4 +1,5 @@
 <div x-data>
+
     <div>
         <p class="text-xl text-blackCanvas mb-2">Talla: </p>
 
@@ -21,7 +22,16 @@
         </select>
     </div>
 
-    <div class="flex items-center mt-4">
+    <p class="text-grayP my-4">
+        <span class="font-semibold text-lg">Stock disponible:</span>
+        @if ($quantity)
+            ({{ $quantity }})
+        @else
+            ({{ $product->stock }})
+        @endif
+    </p>
+
+    <div class="flex items-center">
 
         <div class="mr-4">
             <x-secondary-button
@@ -44,6 +54,9 @@
 
         <div class="flex-1 h-full">
             <x-button-2-canvas 
+            wire:click="addItem"
+            wire:loading.attr="disabled" 
+            wire:target="addItem"
             x-bind:disabled="!$wire.quantity"
             color="secondary"
             class="w-full h-full">Agregar al carrito de compras</x-button-2-canvas>

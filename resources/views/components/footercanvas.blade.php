@@ -1,6 +1,6 @@
 <footer class="bg-primary py-8">
     <div class="container mx-auto md:flex-row items-center">
-        <div class="container flex items-center mb-4 md:mb-0 md:justify-between">
+        <div class=" flex items-center mb-4 md:mb-0 md:justify-between">
             <div class="flex-col items-center mr-4 md:flex hidden ">
                 <img src="/img/logo.png" alt="Logo de la empresa" class="w-56">
                 <div class="mt-4 flex space-x-4">

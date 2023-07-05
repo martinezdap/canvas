@@ -26,7 +26,15 @@
         </div>
 
         <div class="flex-1 h-full">
-            <x-button-2-canvas color="secondary" class="w-full h-full">Agregar al carrito de compras</x-button-2-canvas>
+            <x-button-2-canvas 
+            x-bind:disabled="$wire.qty > {{$quantity}}"
+            wire:click="addItem" {{--}}Indicamos que cuando se hace click se realiza esta funcion declarada en el controlador{{--}}
+            wire:loading.attr="disabled" {{--}} Le indicamos al boton que este deshabilitado cuando se este ejecutando la funcion {{--}}
+            wire:target="addItem" {{--}} Por ultimo le indicamos que se deshabilitara la funcion addItem {{--}}
+            color="secondary" 
+            class="w-full h-full">
+                Agregar al carrito de compras
+            </x-button-2-canvas>
         </div>
 
     </div>
