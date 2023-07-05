@@ -10,7 +10,4 @@
         <span
             class="absolute top-0 right-0 inline-block w-2.5 h-2.5 transform translate-x-1/2 -translate-y-1/2 bg-white rounded-full"></span>
     @endif
-
-
-
 </span>

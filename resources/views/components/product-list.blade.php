@@ -15,9 +15,11 @@
 
             </div>
             <div class="">
-                <x-button>
-                    Mas informacion
-                </x-button>
+                <a href="{{ route('products.show', $product->id) }}">
+                    <x-button>
+                        Mas informacion
+                    </x-button>
+                </a>
             </div>
         </div>
     </article>

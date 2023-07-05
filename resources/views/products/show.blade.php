@@ -33,11 +33,11 @@
         /* Elimina el fondo en el hover */
     }
 </style>
+
 <x-app-layout>
     <div class="container">
         <div class="grid grid-cols-2 gap-6 py-8">
             <div>
-                <!-- Place somewhere in the <body> of your page -->
                 <div class="flexslider">
                     <ul class="slides">
 

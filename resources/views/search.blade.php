@@ -3,7 +3,6 @@
     <ul>
         @forelse ($products as $product )
              <x-product-list :product="$product"/>
-
         @empty
 
         <li class="bg-whiteCanvas rounded-lg shadow-2xl">
